@@ -27,7 +27,6 @@ message("--   KKD_CPP_OPT_ASYNC=${KKD_CPP_OPT_ASYNC}")
 if (KKD_CPP_OPT_BUILD_STATIC)
 	set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
 	set(BUILD_SHARED_LIBS OFF)
-	link_libraries("-static")
 endif (KKD_CPP_OPT_BUILD_STATIC)
 
 add_subdirectory(src)

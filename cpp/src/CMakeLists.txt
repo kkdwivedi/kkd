@@ -7,6 +7,7 @@ endif (NOT KKD_CPP_OPT_ASYNC)
 add_library(kkd-cpp ${KKD_CPP_SRCS})
 target_link_libraries(kkd-cpp )
 set_target_properties(kkd-cpp PROPERTIES VERSION ${PROJECT_VERSION})
+set_target_properties(kkd-cpp PROPERTIES CXX_VISIBILITY_PRESET hidden)
 
 target_include_directories(kkd-cpp PRIVATE ../include)
 target_include_directories(kkd-cpp PRIVATE .)
