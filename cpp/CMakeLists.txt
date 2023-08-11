@@ -8,7 +8,7 @@ set(BUILD_SHARED_LIBS ON)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -Wextra -Wpedantic	\
 	-Wno-gnu-zero-variadic-macro-arguments -Wno-nested-anon-types		\
-	-Wno-gnu-anonymous-struct -Wno-variadic-macro				\
+	-Wno-gnu-anonymous-struct -Wno-variadic-macros				\
 	-Wno-zero-length-array -Wno-c99-designator"
 )
 
