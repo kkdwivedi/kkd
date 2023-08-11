@@ -50,7 +50,7 @@ class PromiseBase {
   ~PromiseBase() = default;
 
   Future get_return_object() noexcept {
-    return Future{std::coroutine_handle<Derived>::from_promise(*static_cast<Derived *>(this))};
+    return Future(std::coroutine_handle<Derived>::from_promise(*static_cast<Derived *>(this)));
   }
 
   std::suspend_always initial_suspend() noexcept { return {}; }
@@ -121,7 +121,7 @@ class Task : public Awaitable<Task<T>> {
   using promise_type = Promise<T, Task<T>>;
   using PromiseType = promise_type;
 
-  Task(std::coroutine_handle<PromiseType> coro) : coro_(coro) {}
+  constexpr explicit Task(std::coroutine_handle<PromiseType> coro) : coro_(coro) {}
 
   Task(const Task&) = delete;
   Task& operator=(const Task&) = delete;
